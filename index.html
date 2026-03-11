@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dla Mamy ❤️</title>
+
+<style>
+
+body{
+margin:0;
+background:black;
+overflow:hidden;
+font-family:Arial;
+color:white;
+}
+
+#love{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:70px;
+color:pink;
+text-shadow:0 0 20px pink;
+}
+
+#count{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:120px;
+color:pink;
+display:none;
+}
+
+#text{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:80%;
+text-align:center;
+font-size:26px;
+display:none;
+}
+
+.heart{
+position:absolute;
+color:#ff2e7a;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh);}
+100%{transform:translateY(110vh);}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- MUZYKA Z YOUTUBE -->
+<iframe
+width="0"
+height="0"
+src="https://www.youtube.com/watch?v=8Gx1Tp1XB0M"
+frameborder="0"
+allow="autoplay">
+</iframe>
+
+<div id="love">Kocham Cię ❤️</div>
+
+<div id="count">3</div>
+
+<div id="text">
+
+Przepraszam cię mamo za błędy, ale powiedz, jak mam zachować się?
+Tyle problemów, tyle złej energii, a potrafisz żyć i prosto stać na nogach
+Wiesz, czasem "dziękuję" nie starczy, dlatego siedzę nad tekstem
+Czasem "dziękuję" nie starczy, dlatego nagrałem piosenkę
+Chcę dać więcej od siebie
+Więc rozchmurz się i nie martw się
+Bo teraz będzie tylko, tylko i tylko lepiej (tylko lepiej)
+Przecież mamy siebie
+Mamo, jedno musisz wiedzieć
+Znam tylko jedno takie serce
+Zasługujesz na dużo więcej
+Rzuć smutek, łap szczęście
+Bo jesteśmy już tak, jesteśmy tak daleko
+Zapinaj pas, może wcale nie być lekko
+Co mam powiedzieć ci?
+Oboje przeszliśmy przez ciemność
+Mamo, jak patrzę, co teraz się dzieje, ze szczęścia przyspiesza mi tętno
+Mamo, muszę to powiedzieć ci, wyglądasz tak pięknie dziś
+I wczoraj, i jutro, i przez całe życie jesteś najpiękniejsza
+Chcę dać więcej od siebie
+Więc rozchmurz się i nie martw się
+Bo teraz będzie tylko, tylko i tylko lepiej (tylko lepiej)
+Przecież mamy siebie
+Tak sobie mówiłem - rodzina to wszystko, a teraz to mówię do ciebie
+Jak jedna osoba sprawiła, że piątka tych dzieci śpi w normalnym świecie
+I ciągle tylko jest lepiej, tylko lepiej, to dzięki tobie chcę więcej
+Już wiesz, że chcę żyć, już wiesz, że mam marzenie
+Kocham ludzi, a tak serio kocham ciebie
+Wiesz, czasem "dziękuję" nie starczy, dlatego siedziałem nad tekstem
+(Nie starczy, dlatego siedziałem nad tekstem)
+(Dlatego nagrałem piosenkę)
+Chcę dać więcej od siebie
+Więc rozchmurz się i nie martw się
+Bo teraz będzie tylko, tylko i tylko lepiej (tylko lepiej)
+Przecież mamy siebie
+
+</div>
+
+<script>
+
+setTimeout(startCountdown,20000)
+
+function startCountdown(){
+
+document.getElementById("love").style.display="none"
+
+let counter=document.getElementById("count")
+
+counter.style.display="block"
+
+let count=3
+
+let interval=setInterval(()=>{
+
+count--
+
+counter.innerText=count
+
+if(count==0){
+
+counter.style.display="none"
+
+clearInterval(interval)
+
+document.getElementById("text").style.display="block"
+
+startHearts()
+
+}
+
+},1000)
+
+}
+
+function createHeart(){
+
+let heart=document.createElement("div")
+
+heart.classList.add("heart")
+
+heart.innerHTML="❤"
+
+heart.style.left=Math.random()*100+"vw"
+
+heart.style.fontSize=(Math.random()*40+20)+"px"
+
+heart.style.animationDuration=(Math.random()*2+1)+"s"
+
+document.body.appendChild(heart)
+
+setTimeout(()=>{heart.remove()},3000)
+
+}
+
+function startHearts(){
+
+setInterval(createHeart,30)
+
+}
+
+</script>
+
+</body>
+</html>
